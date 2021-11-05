@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public GameObject bulletPrefab;
+    public float fireDelay;
+    float cooldown=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +17,14 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldown -= Time.deltaTime;
         transform.Translate(0, Input.GetAxis("Vertical") * 5 * Time.deltaTime, 0);
         transform.Translate(Input.GetAxis("Horizontal") * 5 * Time.deltaTime, 0, 0);
 
-        if (Input.GetAxis("Fire1") == 1)
+        if (Input.GetAxis("Fire1") == 1 && cooldown < 0 )
         {
-            Debug.Log("Shoot");
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
+            cooldown = fireDelay;
         }
     }
 }
