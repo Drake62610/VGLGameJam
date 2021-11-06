@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (cooldown >= 0) {
-            cooldown -= Time.deltaTime;
+            cooldown -= Time.unscaledDeltaTime;
         }
         if (gameState=="continue" && Input.GetAxisRaw("Fire1") == 1)
         {
@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
         if (gameState=="continue" && Input.GetAxisRaw("Bomb") == 1 && cooldown < 0 )
         {
             countdownValue--;
+            Text countdownTextObj = continueEvent.GetComponentsInChildren<Text>()[1];
+            countdownTextObj.text = countDownMax.ToString();
+            countdownTextObj.text = countdownValue.ToString();
             cooldown = 0.1f;
         }
     }
@@ -89,15 +92,15 @@ public class GameManager : MonoBehaviour
     private IEnumerator countdown()
     {
         // Get countdown text
-        Text countdown = continueEvent.GetComponentsInChildren<Text>()[1];
-        countdown.text = countDownMax.ToString();
+        Text countdownTextObj = continueEvent.GetComponentsInChildren<Text>()[1];
+        countdownTextObj.text = countDownMax.ToString();
 
         continueEvent.SetActive(true);
 
         for (countdownValue = countDownMax-1; countdownValue >= 0; countdownValue--)
         {
             yield return new WaitForSecondsRealtime(1);
-            countdown.text = countdownValue.ToString();
+            countdownTextObj.text = countdownValue.ToString();
         }
 
         continueEvent.SetActive(false);
