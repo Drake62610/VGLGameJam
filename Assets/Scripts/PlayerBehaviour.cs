@@ -29,7 +29,9 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldown -= Time.deltaTime;
+        if (cooldown >= 0) {
+            cooldown -= Time.deltaTime;
+        }
 
         if (Input.GetAxis("Fire1") == 1 && cooldown < 0 )
         {

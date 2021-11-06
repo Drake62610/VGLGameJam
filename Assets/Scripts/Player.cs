@@ -25,7 +25,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "enemyBullet") {
             lifeBar.fillAmount -= 1f/maxHealth;
-
+            health--;
+            if (health <= 0) {
+                // Destruction Sequence
+                GameManager.instance.triggerContinue();
+            }
             Destroy(other.gameObject);
         }
     }
