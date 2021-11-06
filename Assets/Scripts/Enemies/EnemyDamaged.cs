@@ -17,6 +17,7 @@ public class EnemyDamaged : MonoBehaviour
             {
                 DestroyOnKill();
             }
+            Destroy(other.gameObject);
         }
     }
 
