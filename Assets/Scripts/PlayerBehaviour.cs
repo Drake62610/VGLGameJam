@@ -17,18 +17,21 @@ public class PlayerBehaviour : MonoBehaviour
     float activeModifier = 1;
     float cooldown=0;
 
+    //Private
+    private Rigidbody2D rb2D;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         cooldown -= Time.deltaTime;
-        transform.Translate(0, Input.GetAxis("Vertical") * speed * Time.deltaTime * activeModifier, 0);
-        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime* activeModifier, 0, 0);
+        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
+        rb2D.MovePosition(rb2D.position + velocity);
 
         if (Input.GetAxis("Fire1") == 1 && cooldown < 0 )
         {
