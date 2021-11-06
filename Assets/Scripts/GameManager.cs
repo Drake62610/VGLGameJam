@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject continueEvent;
     public static GameManager instance = null;
 
+    public float playerHealth;
+    private int playerScore;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -33,5 +36,11 @@ public class GameManager : MonoBehaviour
     private void triggerContinue() {
         Time.timeScale = 0;
         continueEvent.SetActive(true);
+    }
+
+    public void AddScore(int toAdd)
+    {
+        playerScore += toAdd;
+        Debug.Log("Score :" + playerScore);
     }
 }

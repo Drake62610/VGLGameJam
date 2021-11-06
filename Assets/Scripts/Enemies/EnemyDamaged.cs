@@ -5,13 +5,26 @@ using UnityEngine;
 public class EnemyDamaged : MonoBehaviour
 {
     public int health;
+    public int scoreValue;
+    public AudioClip deathClip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "playerBullet")
         {
-            Destroy(this.gameObject);
+            health -= other.GetComponent<PlayerBulletBehavior>().damage;
+            if (health <= 0)
+            {
+                DestroyOnKill();
+            }
         }
+    }
+
+    private void DestroyOnKill()
+    {
+        // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
+        AudioSource.PlayClipAtPoint(deathClip, gameObject.transform.position);
+        GameManager.instance.AddScore(scoreValue);
+        Destroy(this.gameObject);
     }
 }
