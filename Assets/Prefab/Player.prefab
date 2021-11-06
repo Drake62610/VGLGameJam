@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2767295866381788651, guid: ccd7886b70d238442b5eca5e69df8493, type: 3}
   hitBox: {fileID: 5813144107831416447}
-  speed: 20
+  speed: 10
   fireDelay: 0.15
   focusModifier: 0.5
 --- !u!50 &1415548663073680850
@@ -221,4 +221,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
