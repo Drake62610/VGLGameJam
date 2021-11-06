@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 19757142}
   - component: {fileID: 19757141}
   - component: {fileID: 19757140}
-  - component: {fileID: 19757145}
+  - component: {fileID: 19757144}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -226,7 +226,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &19757145
+--- !u!114 &19757144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741bac5c22383064caadf8d5789c1581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: Level1
   startText: {fileID: 239515240}
+  firstScene: Level1
 --- !u!1001 &54309087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TEST
+  m_Text: PRESS FIRE BUTTON
 --- !u!222 &239515241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TOTALLY NOT TOUHOU
+  m_Text: 'JEU DE TIR (NOT TOUHOU)
 
     ARCADE'
 --- !u!222 &1996417659
