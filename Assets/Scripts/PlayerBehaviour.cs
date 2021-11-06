@@ -30,8 +30,6 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         cooldown -= Time.deltaTime;
-        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
-        rb2D.MovePosition(rb2D.position + velocity);
 
         if (Input.GetAxis("Fire1") == 1 && cooldown < 0 )
         {
@@ -49,5 +47,11 @@ public class PlayerBehaviour : MonoBehaviour
             hitBox.SetActive(false);
             activeModifier = 1;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
+        rb2D.MovePosition(rb2D.position + velocity);
     }
 }
