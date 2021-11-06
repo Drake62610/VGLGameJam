@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741bac5c22383064caadf8d5789c1581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: Player
+  firstScene: Level1
   startText: {fileID: 239515240}
 --- !u!1001 &54309087
 PrefabInstance:

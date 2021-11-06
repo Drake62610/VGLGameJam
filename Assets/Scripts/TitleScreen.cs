@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TitleScreenBehaviour : MonoBehaviour
+public class TitleScreen : MonoBehaviour
 {
 
     public Text startText;
@@ -30,7 +30,7 @@ public class TitleScreenBehaviour : MonoBehaviour
         while(true) {
             startText.text = "";
             yield return new WaitForSeconds(1f);
-            startText.text = "PRESS X BUTTON";
+            startText.text = "PRESS FIRE BUTTON";
             yield return new WaitForSeconds(1f);
         }
     }
