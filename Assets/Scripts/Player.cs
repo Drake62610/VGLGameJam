@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public Image lifeBar;
     public float maxHealth = 3f;
+    public AudioSource audioSourceHit;
     private float health;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "enemyBullet") {
             lifeBar.fillAmount -= 1f/maxHealth;
+            audioSourceHit.Play();
             health--;
             if (health <= 0) {
                 // Destruction Sequence

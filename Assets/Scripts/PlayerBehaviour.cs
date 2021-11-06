@@ -7,6 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     // GameObjects
     public GameObject bulletPrefab;
     public GameObject hitBox;
+    public AudioSource audioSourceFire;
     
     // Parameters
     public float speed;
@@ -36,6 +37,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetAxis("Fire1") == 1 && cooldown < 0 )
         {
             Instantiate(bulletPrefab, transform.position, transform.rotation);
+            audioSourceFire.Play();
             cooldown = fireDelay;
         }
 
