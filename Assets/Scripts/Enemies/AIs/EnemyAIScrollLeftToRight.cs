@@ -16,5 +16,15 @@ public class EnemyAIScrollLeftToRight : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, moveTo.destination, moveTo.speed * Time.deltaTime);
+        if (transform.position == moveTo.destination)
+        {
+            SelfDestruct();
+        }
+    }
+
+    // Self-destruct should not give any points to the player
+    private void SelfDestruct()
+    {
+        Destroy(gameObject);
     }
 }

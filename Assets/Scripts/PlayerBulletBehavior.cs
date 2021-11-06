@@ -6,6 +6,7 @@ public class PlayerBulletBehavior : MonoBehaviour
 {
     public float speed = 5f;
     public float ttl = 1f;
+    public int damage = 20;
 
     // Update is called once per frame
     void Update()

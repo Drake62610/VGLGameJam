@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     private int countdownValue;
     private float cooldown=0;
 
+    public float playerHealth;
+    private int playerScore;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
+    private void Awake() {
+        if (instance == null) {
             instance = this;
         }
         else if (instance != this)
@@ -104,6 +104,12 @@ public class GameManager : MonoBehaviour
         continueEvent.SetActive(false);
         Time.timeScale = 1;
         gameOver();
+    }
+
+    public void AddScore(int toAdd)
+    {
+        playerScore += toAdd;
+        Debug.Log("Score :" + playerScore);
     }
 }
 
