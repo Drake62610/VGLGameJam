@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
     {
         playerScore += toAdd;
         scoreText.text = playerScore.ToString("00000000");
-        Debug.Log("Score :" + playerScore);
     }
 }
 
