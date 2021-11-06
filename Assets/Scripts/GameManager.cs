@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject continueEvent;
     public static GameManager instance = null;
 
-    public float playerHealth;
-
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -18,6 +16,8 @@ public class GameManager : MonoBehaviour
         else if (instance != this) {
             Destroy(this.gameObject);
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
