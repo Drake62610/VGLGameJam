@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public Image lifeBar;
     public float maxHealth = 3f;
-    public float health;
+    private float health;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "enemyBullet") {
+        if (other.tag == "enemyBullet") {
             lifeBar.fillAmount -= 1f/maxHealth;
             health--;
             if (health <= 0) {
