@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   scoreValue: 1000
-  deathClip: {fileID: 8300000, guid: 419123e1d583b854487d4c30b92d33e2, type: 3}
+  deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
 --- !u!114 &2742915442765584940
 MonoBehaviour:
   m_ObjectHideFlags: 0
