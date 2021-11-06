@@ -1015,6 +1015,7 @@ MonoBehaviour:
   continueEvent: {fileID: 1465682102}
   countDownMax: 10
   playerHealth: 0
+  scoreText: {fileID: 204961299}
 --- !u!4 &762097553
 Transform:
   m_ObjectHideFlags: 0

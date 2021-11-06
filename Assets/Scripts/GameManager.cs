@@ -8,18 +8,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     private string gameState;
-
-    /* PARAMETERS */
     public string gameOverScene;
 
     // Continue Feature
     public GameObject continueEvent;
-
     public int countDownMax = 10;
     private int countdownValue;
     private float cooldown=0;
 
     public float playerHealth;
+    public Text scoreText;
     private int playerScore;
 
     private void Awake() {
@@ -111,6 +109,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int toAdd)
     {
         playerScore += toAdd;
+        scoreText.text = playerScore.ToString("00000000");
         Debug.Log("Score :" + playerScore);
     }
 }
