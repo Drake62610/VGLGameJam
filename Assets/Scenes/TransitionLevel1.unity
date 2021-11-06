@@ -195,14 +195,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C'est la guerre !\nLes terribles Phyroxiens ont envahis le syst\xE9me
-    Myrodin et ont conquis les plan\xE9tes les une apr\xE9s les autres.\nUne plan\xE9te
-    leur r\xE9siste encore, la plan\xE9te Dominaria o\xF9 les Starwalkers, des pilotes
-    d'\xE9lite, sont form\xE9 et contrent leurs offensives.\nLes Phyroxien ont donc
-    d\xE9cid\xE9 de lancer toutes leurs forces dans la conqu\xEAte de la plan\xE9te
-    dissidente aid\xE9 de leurs vaisseaux m\xE9re.\nPour les Starwalkers, c'est la
-    derni\xE9re chance de mettre un terme \xE0 cette guerre et de sauver de nombreuse
-    vie dans l'univers."
+  m_Text: "C'est la guerre !\r\nLes terribles Phyroxiens ont envahi le syst\xE8me
+    Myrodin et ont conquis les plan\xE8tes les une apr\xE8s les autres.\r\nUne plan\xE8te
+    leur r\xE9siste encore, la plan\xE8te Dominaria o\xF9 les Marcheurs d'\xE9toiles,
+    des pilotes d'\xE9lite, sont form\xE9s et contrent leur offensive.\r\nLes Phyroxiens
+    ont donc d\xE9cid\xE9 de lancer toutes leurs forces dans la conqu\xEAte de la
+    plan\xE8te dissidente, aid\xE9s de leur vaisseau m\xE8re.\r\nPour les Marcheurs
+    d'\xE9toiles, c'est la derni\xE8re chance de mettre un terme \xE0 cette guerre
+    et de sauver de nombreuses vies dans l'univers."
 --- !u!222 &237237417
 CanvasRenderer:
   m_ObjectHideFlags: 0
