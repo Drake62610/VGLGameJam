@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public LevelLoader levelLoader;
     public int playerScore;
     private int level = 1;
     public string gameState;
