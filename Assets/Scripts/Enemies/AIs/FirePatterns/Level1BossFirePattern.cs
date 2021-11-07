@@ -24,6 +24,9 @@ public class Level1BossFirePattern : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!bossData.IsActivated)
+            return;
+
         cooldownTime -= Time.deltaTime;
         if (bossData.nbStocks == 3)
         {

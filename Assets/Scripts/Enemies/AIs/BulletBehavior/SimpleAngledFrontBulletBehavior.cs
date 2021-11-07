@@ -11,7 +11,6 @@ public class SimpleAngledFrontBulletBehavior : MonoBehaviour
 
     void Start() {
         randomDirection = new Vector3(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(0.2f,1f), 0).normalized;
-        Debug.Log(randomDirection);
     }
 
     // Update is called once per frame

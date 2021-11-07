@@ -149,7 +149,7 @@ MonoBehaviour:
   maxHealth: 80
   scoreValue: 1000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
-  health: 50
+  health: 80
 --- !u!114 &577884654518247184
 MonoBehaviour:
   m_ObjectHideFlags: 0

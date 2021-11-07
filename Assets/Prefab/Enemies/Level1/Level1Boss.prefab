@@ -257,10 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659445a5aa89b0c47bdc01622c3293d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2500
+  maxHealth: 2000
   scoreValue: 10000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
   health: 2500
-  secondPhaseSprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
-  thirdPhaseSprite: {fileID: 21300000, guid: 104b09ae192669b4ca8699740b8c9919, type: 3}
+  phaseDescriptors:
+  - sprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
+    maxHealth: 2000
+  - sprite: {fileID: 21300000, guid: 104b09ae192669b4ca8699740b8c9919, type: 3}
+    maxHealth: 2500
   nbStocks: 3
