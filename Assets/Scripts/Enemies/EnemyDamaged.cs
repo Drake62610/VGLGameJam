@@ -34,4 +34,10 @@ public class EnemyDamaged : MonoBehaviour
         GameManager.instance.playerScore += scoreValue;
         Destroy(this.gameObject);
     }
+
+    protected void SetMaxHealth(int newMaxHealth)
+    {
+        maxHealth = newMaxHealth;
+        health = newMaxHealth;
+    }
 }

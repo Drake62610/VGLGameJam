@@ -1,20 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+public struct BossPhaseDescriptor
+{
+    public Sprite sprite;
+    public int maxHealth;
+
+    public BossPhaseDescriptor(Sprite sprite, int maxHealth)
+    {
+        this.sprite = sprite;
+        this.maxHealth = maxHealth;
+    }
+}
+
+
 public class Boss : EnemyDamaged
 {
-    public Sprite secondPhaseSprite;
-    public Sprite thirdPhaseSprite;
+    public List<BossPhaseDescriptor> phaseDescriptors = new List<BossPhaseDescriptor>();
     public int nbStocks = 3;
+    public bool IsActivated { get; private set; }
 
     private BossLifeBar bossLifeBar;
     private SpriteRenderer spriteRenderer;
+    private int maxNbStocks;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxNbStocks = nbStocks;
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Find BossLifeBar GameObject by name, even if it's disabled
@@ -26,7 +43,6 @@ public class Boss : EnemyDamaged
                 if (objs[i].name == "BossLifeBar")
                 {
                     bossLifeBar = objs[i];
-                    bossLifeBar.gameObject.SetActive(true);
                     break;
                 }
             }
@@ -35,6 +51,9 @@ public class Boss : EnemyDamaged
 
     public new void OnTriggerEnter2D(Collider2D other)
     {
+        if (!IsActivated)
+            return;
+
         if (other.tag == "playerBullet")
         {
             health -= other.GetComponent<PlayerBulletBehavior>().damage;
@@ -56,22 +75,18 @@ public class Boss : EnemyDamaged
             return;
         }
 
-        maxHealth = 2000;
-        health = 2000;
+        int idx = maxNbStocks - nbStocks - 1;
+
+        SetMaxHealth(phaseDescriptors[idx].maxHealth);
+        spriteRenderer.sprite = phaseDescriptors[idx].sprite;
         bossLifeBar.SetFillAmount(1);
         bossLifeBar.SetLifeBarIndex(nbStocks);
-        SetSpriteIndex(nbStocks);
     }
 
-    private void SetSpriteIndex(int remainingStocks)
+    // Enable lifebar + enable firing
+    public void Activate()
     {
-        if (remainingStocks == 2)
-        {
-            spriteRenderer.sprite = secondPhaseSprite;
-        }
-        else if (remainingStocks == 1)
-        {
-            spriteRenderer.sprite = thirdPhaseSprite;
-        }
+        bossLifeBar.gameObject.SetActive(true);
+        IsActivated = true;
     }
 }

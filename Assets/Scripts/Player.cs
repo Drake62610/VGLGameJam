@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer sprite;
     private bool isInvincible = false;
+    private bool canFire = true;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
             cooldown -= Time.deltaTime;
         }
 
-        if (Input.GetAxis("Fire1") == 1 && cooldown < 0)
+        if (Input.GetAxis("Fire1") == 1 && cooldown < 0 && canFire)
         {
             Instantiate(bulletPrefab, transform.position, transform.rotation);
             audioSourceFire.Play();
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
         Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
         rb2D.MovePosition(rb2D.position + velocity);
     }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "enemyBullet" && !isInvincible) {
             lifeBar.fillAmount -= 1f / maxHealth;
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Make invincible for a short amount of time, with a blinking animation
     private void MakeInvincible()
     {
         isInvincible = true;
@@ -110,8 +113,6 @@ public class Player : MonoBehaviour
         {
             sprite.enabled = !sprite.enabled;
             yield return new WaitForSeconds(blinkSpd);
-            sprite.enabled = !sprite.enabled;
-            yield return new WaitForSeconds(blinkSpd);
         }
         sprite.enabled = true;
     }
@@ -119,5 +120,22 @@ public class Player : MonoBehaviour
     private void StopInvincible()
     {
         isInvincible = false;
+    }
+
+    // Make player active or inactive
+    // If inactive, player is invincible, unable to fire, but still able to move
+    // Used in boss spawning animation for example
+    public void MakeActive(bool active)
+    {
+        if (active)
+        {
+            isInvincible = false;
+            canFire = true;
+        }
+        else
+        {
+            isInvincible = true;
+            canFire = false;
+        }
     }
 }

@@ -281,6 +281,11 @@ MonoBehaviour:
     spawnTime: 25
     enemyGameObject: {fileID: 2742915442765584913, guid: 8113320989b6f9943935e416c330a154, type: 3}
     enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
+  bossSpawnData:
+    spawnPosition: {x: 0, y: 12, z: 0}
+    spawnTime: 30
+    enemyGameObject: {fileID: 8977053816036207941, guid: eabe245f187f35f4d976821d85f26fe4, type: 3}
+    enemyMovementBehaviorScriptName: BossAIScrollFromUpperScreen
   gameField: {fileID: 515675574}
 --- !u!4 &51818046
 Transform:
@@ -424,7 +429,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &204961297
@@ -961,7 +966,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &515675574
@@ -1511,7 +1516,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1205263267
@@ -1642,7 +1647,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1246342593
@@ -1730,7 +1735,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246342593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7cf6332d369bb24d99f55b480aaf783, type: 3}
+  m_Script: {fileID: 11500000, guid: d9757ce8793fafd41b16326b70ede868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeBarSecondPhaseSprite: {fileID: 21300000, guid: 294f0bfb5730d5045beba3cfbbf390cf, type: 3}
