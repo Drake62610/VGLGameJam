@@ -20,7 +20,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator StartLevel()
     {
         GameField.SetTrigger("Start");
-        yield return new WaitForSecondsRealtime(6f);
+        yield return new WaitForSecondsRealtime(0);
         audioSource.Play();
         level01Descriptor.LevelStart();
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePatternFront : MonoBehaviour
+public class FirePatternFront : IFirePattern
 {
     public float fireRate;
     // If set to 0 is disabled
@@ -10,13 +10,16 @@ public class FirePatternFront : MonoBehaviour
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
-    public float cooldownTime = 0;
 
     private void Awake()
     {
         if (shootingDelay != 0) {
             cooldownTime = shootingDelay;
         }
+    }
+
+    private void Start() {
+        cooldownTime = 0;
     }
 
     // Update is called once per frame
