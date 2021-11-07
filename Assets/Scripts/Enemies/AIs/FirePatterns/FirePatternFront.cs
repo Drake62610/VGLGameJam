@@ -10,12 +10,10 @@ public class FirePatternFront : MonoBehaviour
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
-    private GameObject gameField;
     public float cooldownTime = 0;
 
     private void Awake()
     {
-        gameField = GameObject.Find("GameField");
         if (shootingDelay != 0) {
             cooldownTime = shootingDelay;
         }
