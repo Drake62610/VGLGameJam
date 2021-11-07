@@ -379,7 +379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2637633c37bd534db3e897756e2fb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatedBg: []
+  animatedBg:
+  - {fileID: 21300000, guid: 47c5feefc7e9d9a4fbe226a1b9a64f92, type: 3}
+  - {fileID: 21300000, guid: 6c312b52742d7b8419394fa5e16ac59c, type: 3}
   animateImageObj: {fileID: 640246476}
   animateSpriteObj: {fileID: 0}
   typeOfObj: image

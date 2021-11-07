@@ -6,16 +6,17 @@ public class Level01Descriptor : MonoBehaviour
 {
     [SerializeField]
     public List<EnemySpawnData> enemiesSpawnData = new List<EnemySpawnData>();
+    public EnemySpawnData bossSpawnData;
 
     public GameObject gameField;
 
-    // Start is called before the first frame update
-    void Start()
+    public void LevelStart()
     {
         foreach (var enemySpawnData in enemiesSpawnData)
         {
             StartCoroutine(SpawnEnemy(enemySpawnData));
         }
+        StartCoroutine(SpawnBoss(bossSpawnData));
     }
 
     public IEnumerator SpawnEnemy(EnemySpawnData enemySpawnData)
@@ -23,8 +24,18 @@ public class Level01Descriptor : MonoBehaviour
         yield return new WaitForSeconds(enemySpawnData.spawnTime);
         var enemyGameObject = Instantiate(enemySpawnData.enemyGameObject, enemySpawnData.spawnPosition + gameField.transform.position, Quaternion.identity);
 
-        var x = System.Type.GetType(enemySpawnData.enemyMovementBehaviorScriptName);
-        enemyGameObject.AddComponent(x);
+        var enemyMovementBehaviorScript = System.Type.GetType(enemySpawnData.enemyMovementBehaviorScriptName);
+        enemyGameObject.AddComponent(enemyMovementBehaviorScript);
+        enemyGameObject.transform.parent = gameField.transform;
+    }
+
+    public IEnumerator SpawnBoss(EnemySpawnData bossSpawnData)
+    {
+        yield return new WaitForSeconds(bossSpawnData.spawnTime);
+        var enemyGameObject = Instantiate(bossSpawnData.enemyGameObject, bossSpawnData.spawnPosition + gameField.transform.position, Quaternion.identity);
+
+        var enemyMovementBehaviorScript = System.Type.GetType(bossSpawnData.enemyMovementBehaviorScriptName);
+        enemyGameObject.AddComponent(enemyMovementBehaviorScript);
         enemyGameObject.transform.parent = gameField.transform;
     }
 }

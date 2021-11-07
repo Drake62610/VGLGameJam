@@ -10,6 +10,7 @@ TagManager:
   - enemyBullet
   - bullet
   - continue
+  - load
   layers:
   - Default
   - TransparentFX
