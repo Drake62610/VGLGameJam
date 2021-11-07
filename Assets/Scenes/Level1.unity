@@ -441,7 +441,7 @@ MonoBehaviour:
     spawnTime: 56
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: -5, y: 13, z: 0}
+  - spawnPosition: {x: -4, y: 13, z: 0}
     spawnTime: 57.5
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
     enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized

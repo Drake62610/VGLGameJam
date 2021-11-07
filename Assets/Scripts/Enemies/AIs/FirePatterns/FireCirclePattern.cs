@@ -11,7 +11,7 @@ public class FireCirclePattern : MonoBehaviour
 
     public string behaviorType;
 
-    private GameObject[] players; 
+    private GameObject[] players;
     private Vector3 playerPosition;
     private Vector3 playerDirection;
 
@@ -23,16 +23,25 @@ public class FireCirclePattern : MonoBehaviour
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("player");
-        if (players == null) {
-            playerPosition = new Vector3(0,1,0);
+        if (players.Length == 0)
+        {
+            playerPosition = new Vector3(1, 1, 0).normalized;
+
         }
-        playerPosition = players[0].transform.position;
+        else
+        {
+            playerPosition = players[0].transform.position;
+        }
         playerDirection = (playerPosition - transform.position).normalized;
 
-        if (behaviorType == "circleSpread") {
+
+        if (behaviorType == "circleSpread")
+        {
             StartCoroutine(FireCircleSpread());
-            
-        } else {
+
+        }
+        else
+        {
             StartCoroutine(FireCircle());
         }
     }
@@ -43,55 +52,67 @@ public class FireCirclePattern : MonoBehaviour
 
     private IEnumerator FireCircle()
     {
-        List<GameObject> bullets = new List<GameObject>();
+        List<GameObject> bullets;
+        GameObject bullet;
 
-        for (var i = 0; i < numberOfBullets; i++)
+        while (fireRate > 0)
         {
-            var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
-            var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
+            bullets = new List<GameObject>();
+            for (var i = 0; i < numberOfBullets; i++)
+            {
+                var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
+                var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
 
-            GameObject bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
+                bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
 
-            bullet.GetComponent<ParametrableBulletBehavior>().speed = 0f;
-            bullet.GetComponent<ParametrableBulletBehavior>().ttl = 10f;
+                bullet.GetComponent<IParametrableBullet>().speed = 0f;
+                bullet.GetComponent<IParametrableBullet>().ttl = 10f;
 
-            bullets.Add(bullet);
+                bullets.Add(bullet);
 
-            yield return new WaitForSeconds(1/numberOfBullets);
-        }
+                yield return new WaitForSeconds(1 / numberOfBullets);
+            }
 
-        for (var i = 0; i < numberOfBullets; i++)
-        {
-            bullets[i].GetComponent<ParametrableBulletBehavior>().speed = 5f;
-            bullets[i].GetComponent<ParametrableBulletBehavior>().ttl = 20f;
-            bullets[i].GetComponent<ParametrableBulletBehavior>().direction= playerDirection;
+            for (var i = 0; i < numberOfBullets; i++)
+            {
+                bullets[i].GetComponent<IParametrableBullet>().speed = 5f;
+                bullets[i].GetComponent<IParametrableBullet>().ttl = 20f;
+                bullets[i].GetComponent<IParametrableBullet>().direction = playerDirection;
+            }
+            yield return new WaitForSeconds(fireRate);
         }
     }
 
     private IEnumerator FireCircleSpread()
     {
-        List<GameObject> bullets = new List<GameObject>();
+        List<GameObject> bullets;
+        GameObject bullet;
 
-        for (var i = 0; i < numberOfBullets; i++)
+        while (fireRate > 0)
         {
-            var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
-            var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
+            bullets = new List<GameObject>();
+            for (var i = 0; i < numberOfBullets; i++)
+            {
+                var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
+                var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
 
-            GameObject bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
+                bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
 
-            bullet.GetComponent<ParametrableBulletBehavior>().speed = 0f;
-            bullet.GetComponent<ParametrableBulletBehavior>().ttl = 10f;
+                bullet.GetComponent<IParametrableBullet>().speed = 0f;
+                bullet.GetComponent<IParametrableBullet>().ttl = 10f;
 
-            bullets.Add(bullet);
+                bullets.Add(bullet);
 
-            yield return new WaitForSeconds(1/numberOfBullets);
-        }
+                yield return new WaitForSeconds(1 / numberOfBullets);
+            }
 
-        for (var i = 0; i < numberOfBullets; i++)
-        {
-            bullets[i].GetComponent<ParametrableBulletBehavior>().speed = 5f;
-            bullets[i].GetComponent<ParametrableBulletBehavior>().ttl = 20f;
-            bullets[i].GetComponent<ParametrableBulletBehavior>().direction= bullets[i].gameObject.transform.position - bulletSpawnPoint.position;
+            for (var i = 0; i < numberOfBullets; i++)
+            {
+                bullets[i].GetComponent<IParametrableBullet>().speed = 5f;
+                bullets[i].GetComponent<IParametrableBullet>().ttl = 20f;
+                bullets[i].GetComponent<IParametrableBullet>().direction = bullets[i].gameObject.transform.position - bulletSpawnPoint.position;
+            }
+            yield return new WaitForSeconds(fireRate);
         }
     }
 }

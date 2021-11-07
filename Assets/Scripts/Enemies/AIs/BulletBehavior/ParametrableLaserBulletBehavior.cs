@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParametrableBulletBehavior : IParametrableBullet
+public class ParametrableLaserBulletBehavior : IParametrableBullet
 {
     void Start() {
         
