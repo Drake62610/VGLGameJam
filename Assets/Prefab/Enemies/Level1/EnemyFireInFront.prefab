@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4388513847357873218}
   - component: {fileID: -5321561526618604284}
   - component: {fileID: 2742915442765584914}
-  - component: {fileID: 2742915442765584940}
   - component: {fileID: 577884654518247184}
   m_Layer: 0
-  m_Name: EnemyLeftToRight
+  m_Name: EnemyFireInFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,18 +149,6 @@ MonoBehaviour:
   health: 50
   scoreValue: 1000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
---- !u!114 &2742915442765584940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2742915442765584913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecdce2bfa189d440a354a7ffec1a84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &577884654518247184
 MonoBehaviour:
   m_ObjectHideFlags: 0

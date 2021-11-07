@@ -156,12 +156,15 @@ MonoBehaviour:
   - spawnPosition: {x: -6, y: 7, z: 0}
     spawnTime: 0
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
   - spawnPosition: {x: -6, y: 7, z: 0}
     spawnTime: 0.5
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
   - spawnPosition: {x: -6, y: 7, z: 0}
     spawnTime: 1
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
   gameField: {fileID: 515675574}
 --- !u!4 &51818046
 Transform:

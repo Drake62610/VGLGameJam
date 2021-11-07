@@ -22,6 +22,9 @@ public class Level01Descriptor : MonoBehaviour
     {
         yield return new WaitForSeconds(enemySpawnData.spawnTime);
         var enemyGameObject = Instantiate(enemySpawnData.enemyGameObject, enemySpawnData.spawnPosition + gameField.transform.position, Quaternion.identity);
+
+        var x = System.Type.GetType(enemySpawnData.enemyMovementBehaviorScriptName);
+        enemyGameObject.AddComponent(x);
         enemyGameObject.transform.parent = gameField.transform;
     }
 }
