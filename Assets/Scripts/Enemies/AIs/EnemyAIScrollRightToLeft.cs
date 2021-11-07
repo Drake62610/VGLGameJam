@@ -5,20 +5,25 @@ using UnityEngine;
 public class EnemyAIScrollRightToLeft : MonoBehaviour
 {
     private EnemyMoveToMovementBehavior moveTo;
+    private EnemyDamaged ennemy;
 
     // Start is called before the first frame update
     void Start()
     {
+        ennemy = GetComponent<EnemyDamaged>();
         moveTo = new EnemyMoveToMovementBehavior(new Vector3(-6f, transform.localPosition.y, 0) + transform.parent.position, 3f, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveTo.destination, moveTo.speed * Time.deltaTime);
-        if (transform.position == moveTo.destination)
+        if (ennemy.health >= 0)
         {
-            SelfDestruct();
+            transform.position = Vector3.MoveTowards(transform.position, moveTo.destination, moveTo.speed * Time.deltaTime);
+            if (transform.position == moveTo.destination)
+            {
+                SelfDestruct();
+            }
         }
     }
 

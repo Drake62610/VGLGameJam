@@ -16,7 +16,7 @@ public class EnemyDamaged : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "playerBullet")
+        if (other.tag == "playerBullet" && health>0)
         {
             health -= other.GetComponent<PlayerBulletBehavior>().damage;
             if (health <= 0)
