@@ -9,21 +9,20 @@ public class HommingBulletBehavior : MonoBehaviour
     public float ttl = 5f;
     private GameObject[] players; 
     private Vector3 playerPosition;
-    private Vector3 direction;
+    private Vector3 playerDirection;
     void Start() {
         players = GameObject.FindGameObjectsWithTag("player");
         if (players == null) {
             playerPosition = new Vector3(0,1,0);
         }
         playerPosition = players[0].transform.position;
-        direction = (playerPosition - transform.position);
+        playerDirection = (playerPosition - transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        transform.position += direction.normalized * speed * Time.deltaTime;
+        transform.position += playerDirection.normalized * speed * Time.deltaTime;
         Destroy(this.gameObject, ttl);
     }
 }
