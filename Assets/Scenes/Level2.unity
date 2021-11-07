@@ -167,8 +167,8 @@ MonoBehaviour:
     enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
   bossSpawnData:
     spawnPosition: {x: 0, y: 12, z: 0}
-    spawnTime: 100
-    enemyGameObject: {fileID: 8977053816036207941, guid: eabe245f187f35f4d976821d85f26fe4, type: 3}
+    spawnTime: 0
+    enemyGameObject: {fileID: 9103089561663980473, guid: 1785e30ca5bca2d4592a384c2e90ee4a, type: 3}
     enemyMovementBehaviorScriptName: BossAIScrollFromUpperScreen
   gameField: {fileID: 515675574}
 --- !u!4 &51818046
@@ -313,7 +313,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &204961297
@@ -451,6 +451,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5820330954632134658, guid: 9ea43e21412b14c47bc5d9c05883c01c, type: 3}
   m_PrefabInstance: {fileID: 434185951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &289875896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289875898}
+  - component: {fileID: 289875897}
+  m_Layer: 0
+  m_Name: Level02DescriptorManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &289875897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289875896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242adb7a1bbea514b8d7ed3c1e12b265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesSpawnData:
+  - spawnPosition: {x: 9, y: 8, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 484715462b01e024e8d603a5fc5efc31, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 4.5, y: 14, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 484715462b01e024e8d603a5fc5efc31, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 9, y: 8, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 484715462b01e024e8d603a5fc5efc31, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  bossSpawnData:
+    spawnPosition: {x: 0, y: 12, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 9103089561663980473, guid: 1785e30ca5bca2d4592a384c2e90ee4a, type: 3}
+    enemyMovementBehaviorScriptName: BossAIScrollFromUpperScreen
+  gameField: {fileID: 515675574}
+--- !u!4 &289875898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289875896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03615874, y: -5.3840027, z: -0.007964503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381114985
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +931,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &515675574
@@ -1217,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2742915442765584913, guid: 8cb9dc2631229394481aaa9038da4f23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6081803921212204138, guid: 8cb9dc2631229394481aaa9038da4f23, type: 3}
       propertyPath: ttl
@@ -1529,7 +1591,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1205263267
@@ -1660,7 +1722,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1246342593
