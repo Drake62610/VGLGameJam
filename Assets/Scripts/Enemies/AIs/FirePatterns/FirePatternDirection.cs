@@ -22,6 +22,8 @@ public class FirePatternDirection : IFirePattern
     public float ttl = 5f;
     public Vector3 direction = new Vector3(0, -1, 0);
 
+    public float randomRange = 1f;
+
     public Color color = new Color(0, 0, 0);
 
     private void Awake()
@@ -72,7 +74,7 @@ public class FirePatternDirection : IFirePattern
                     Random.Range(0f, 1f), //Blue
                     1
                 );
-                Fire(new Vector3(UnityEngine.Random.Range(-1f, 1f), -UnityEngine.Random.Range(0.2f, 1f), 0).normalized);
+                Fire(new Vector3(UnityEngine.Random.Range(-randomRange, randomRange), -UnityEngine.Random.Range(0.2f, 1f), 0).normalized);
             }
             else if (behaviorType == "homming")
             {
