@@ -3315,6 +3315,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1977607917}
     - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
+      propertyPath: timeToDelay
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
       propertyPath: canvasCamera
       value: 
       objectReference: {fileID: 439155603}
