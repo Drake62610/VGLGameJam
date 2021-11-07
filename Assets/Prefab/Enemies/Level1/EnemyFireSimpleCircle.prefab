@@ -146,9 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21070658d73ec5947ac8089a714a6802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  maxHealth: 0
   scoreValue: 1000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
+  health: 50
 --- !u!114 &8578395498552584962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,10 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  shootingDelay: 0
-  bulletGameObject: {fileID: 2767295866381788651, guid: 0331b1613c8021d4e9b26db0fe5c665e, type: 3}
+  bulletGameObject: {fileID: 2767295866381788651, guid: b3ca3af97f053934a85b8162924ce488, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
-  cooldownTime: 0
+  behaviorType: 
   numberOfBullets: 15
   radius: 2
 --- !u!1 &4751783076408367153

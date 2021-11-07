@@ -6,7 +6,7 @@ public class FireCirclePattern : MonoBehaviour
 {
     public float fireRate;
     // If set to 0 is disabled
-    public ParametrableBulletBehavior bulletGameObject;
+    public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
     public string behaviorType;
@@ -43,17 +43,17 @@ public class FireCirclePattern : MonoBehaviour
 
     private IEnumerator FireCircle()
     {
-        List<ParametrableBulletBehavior> bullets = new List<ParametrableBulletBehavior>();
+        List<GameObject> bullets = new List<GameObject>();
 
         for (var i = 0; i < numberOfBullets; i++)
         {
             var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
             var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
 
-            ParametrableBulletBehavior bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
+            GameObject bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
 
-            bullet.speed = 0f;
-            bullet.ttl = 10f;
+            bullet.GetComponent<ParametrableBulletBehavior>().speed = 0f;
+            bullet.GetComponent<ParametrableBulletBehavior>().ttl = 10f;
 
             bullets.Add(bullet);
 
@@ -62,25 +62,25 @@ public class FireCirclePattern : MonoBehaviour
 
         for (var i = 0; i < numberOfBullets; i++)
         {
-            bullets[i].speed = 5f;
-            bullets[i].ttl = 20f;
-            bullets[i].direction= playerDirection;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().speed = 5f;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().ttl = 20f;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().direction= playerDirection;
         }
     }
 
     private IEnumerator FireCircleSpread()
     {
-        List<ParametrableBulletBehavior> bullets = new List<ParametrableBulletBehavior>();
+        List<GameObject> bullets = new List<GameObject>();
 
         for (var i = 0; i < numberOfBullets; i++)
         {
             var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
             var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
 
-            ParametrableBulletBehavior bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
+            GameObject bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
 
-            bullet.speed = 0f;
-            bullet.ttl = 10f;
+            bullet.GetComponent<ParametrableBulletBehavior>().speed = 0f;
+            bullet.GetComponent<ParametrableBulletBehavior>().ttl = 10f;
 
             bullets.Add(bullet);
 
@@ -89,9 +89,9 @@ public class FireCirclePattern : MonoBehaviour
 
         for (var i = 0; i < numberOfBullets; i++)
         {
-            bullets[i].speed = 5f;
-            bullets[i].ttl = 20f;
-            bullets[i].direction= bullets[i].gameObject.transform.position - bulletSpawnPoint.position;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().speed = 5f;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().ttl = 20f;
+            bullets[i].GetComponent<ParametrableBulletBehavior>().direction= bullets[i].gameObject.transform.position - bulletSpawnPoint.position;
         }
     }
 }
