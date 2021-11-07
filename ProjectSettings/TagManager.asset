@@ -10,6 +10,7 @@ TagManager:
   - enemyBullet
   - bullet
   - continue
+  - scoreCollectible
   layers:
   - Default
   - TransparentFX
