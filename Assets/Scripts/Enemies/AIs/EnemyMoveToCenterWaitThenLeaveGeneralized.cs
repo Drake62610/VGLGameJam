@@ -7,9 +7,15 @@ public class EnemyMoveToCenterWaitThenLeaveGeneralized : MonoBehaviour
     private List<EnemyMoveToMovementBehavior> moveTo = new List<EnemyMoveToMovementBehavior>();
     private int modifiers = 1;
 
+    private FirePatternFront firePattern;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        firePattern = gameObject.GetComponentInParent<FirePatternFront>();
+        firePattern.cooldownTime = 300;
+
         // (4.5, 12) is considered default upper spawn, 
         if (transform.localPosition.x < 0) {
             modifiers = -modifiers;
@@ -22,11 +28,10 @@ public class EnemyMoveToCenterWaitThenLeaveGeneralized : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(moveTo.Count);
-
         transform.position = Vector3.MoveTowards(transform.position, moveTo[0].destination, moveTo[0].speed * Time.deltaTime);
         if (transform.position == moveTo[0].destination)
         {
+            firePattern.cooldownTime = 0.5f;
             moveTo.RemoveAt(0);
         }
 
