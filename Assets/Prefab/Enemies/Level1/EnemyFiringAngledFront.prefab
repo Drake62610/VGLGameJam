@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5321561526618604284}
   - component: {fileID: 2742915442765584914}
   - component: {fileID: 577884654518247184}
+  - component: {fileID: 9052318998777954965}
   m_Layer: 0
   m_Name: EnemyFiringAngledFront
   m_TagString: Untagged
@@ -167,6 +168,25 @@ MonoBehaviour:
   bulletGameObject: {fileID: 2767295866381788651, guid: 145fa6d6b8e54264f826fa3542153014, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
   cooldownTime: 0
+--- !u!95 &9052318998777954965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742915442765584913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08109ab6a4fa3ab49b041bb578f7709f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4751783076408367153
 GameObject:
   m_ObjectHideFlags: 0

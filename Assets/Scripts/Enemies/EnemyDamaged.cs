@@ -29,15 +29,22 @@ public class EnemyDamaged : MonoBehaviour
 
     protected void DestroyOnKill()
     {
-        // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
-        AudioSource.PlayClipAtPoint(deathClip, gameObject.transform.position);
-        GameManager.instance.playerScore += scoreValue;
-        Destroy(this.gameObject);
+        StartCoroutine(EnemyDied());
     }
 
     protected void SetMaxHealth(int newMaxHealth)
     {
         maxHealth = newMaxHealth;
         health = newMaxHealth;
+    }
+
+    IEnumerator EnemyDied()
+    {
+        // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
+        AudioSource.PlayClipAtPoint(deathClip, gameObject.transform.position, 0.5f);
+        gameObject.GetComponent<Animator>().SetTrigger("Die");
+        GameManager.instance.playerScore += scoreValue;
+        yield return new WaitForSecondsRealtime(0.5f);
+        Destroy(this.gameObject);
     }
 }

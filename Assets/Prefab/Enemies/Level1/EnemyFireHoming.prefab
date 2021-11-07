@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5321561526618604284}
   - component: {fileID: 2742915442765584914}
   - component: {fileID: 577884654518247184}
+  - component: {fileID: 8209941602666308908}
   m_Layer: 0
   m_Name: EnemyFireHoming
   m_TagString: enemy
@@ -167,6 +168,25 @@ MonoBehaviour:
   bulletGameObject: {fileID: 2767295866381788651, guid: f069caf9c462695499a6e99ab98b38ae, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
   cooldownTime: 0
+--- !u!95 &8209941602666308908
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742915442765584913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1113971dfdff48e4799c213f7e408960, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4751783076408367153
 GameObject:
   m_ObjectHideFlags: 0

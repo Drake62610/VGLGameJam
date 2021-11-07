@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5321561526618604284}
   - component: {fileID: 2742915442765584914}
   - component: {fileID: 577884654518247184}
+  - component: {fileID: 5143959745036403621}
   m_Layer: 0
   m_Name: EnemyFireInFront
   m_TagString: enemy
@@ -167,6 +168,25 @@ MonoBehaviour:
   bulletGameObject: {fileID: 2767295866381788651, guid: 3dd8bf7ee7547224ca29a0c0f05e24cf, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
   cooldownTime: 0
+--- !u!95 &5143959745036403621
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742915442765584913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c051b3c5d2306d0418bf3f4d3a711a2d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4751783076408367153
 GameObject:
   m_ObjectHideFlags: 0
