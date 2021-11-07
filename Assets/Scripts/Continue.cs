@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,43 +9,36 @@ public class Continue : MonoBehaviour
     public Text countdownTextObj;
     public int countDownMax = 10;
     private int countdownValue;
-    private float cooldown = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    private bool restartKeyReleased = false;
+    private bool decrementCountdownKeyReleased = false;
+
 
     // Update is called once per frame
     void Update()
     {
         if (GameManager.instance.gameState == "continue")
         {
-            if (cooldown >= 0)
-            {
-                cooldown -= Time.unscaledDeltaTime;
-            }
-            if (GameManager.instance.gameState == "continue" && Input.GetAxisRaw("Fire1") == 1)
+            if (Input.GetAxisRaw("Fire1") == 1 && restartKeyReleased)
             {
                 Continuing();
             }
-            if (GameManager.instance.gameState == "continue" && Input.GetAxisRaw("Bomb") == 1 && cooldown < 0)
+            if (Input.GetAxisRaw("Bomb") == 1 && decrementCountdownKeyReleased)
             {
-                // Avoid overflowing to negative values
-                if (countdownValue > 1)
-                {
-                    countdownValue--;
-                }
-                countdownTextObj.text = countDownMax.ToString();
-                countdownTextObj.text = countdownValue.ToString();
-                cooldown = 0.1f;
+                countdownValue--;
+                countdownTextObj.text = Math.Max(countdownValue, 0).ToString();
             }
+
+            restartKeyReleased = Input.GetAxisRaw("Fire1") == 0;
+            decrementCountdownKeyReleased = Input.GetAxisRaw("Bomb") == 0;
         }
 
     }
 
     public void StartCountdown()
     {
+        restartKeyReleased = false;
+        decrementCountdownKeyReleased = false;
         StartCoroutine(Countdown());    
     }
 
@@ -54,7 +48,6 @@ public class Continue : MonoBehaviour
         GameManager.instance.RestartGame();
     }
 
-    // COROUTINE
     private IEnumerator Countdown()
     {
         // Get countdown text
@@ -63,7 +56,7 @@ public class Continue : MonoBehaviour
         for (countdownValue = countDownMax - 1; countdownValue >= 0; countdownValue--)
         {
             yield return new WaitForSecondsRealtime(1);
-            countdownTextObj.text = countdownValue.ToString();
+            countdownTextObj.text = Math.Max(countdownValue, 0).ToString();
         }
 
         Time.timeScale = 1;
