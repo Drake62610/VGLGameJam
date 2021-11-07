@@ -260,7 +260,8 @@ MonoBehaviour:
   maxHealth: 2000
   scoreValue: 10000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
-  health: 2500
+  health: 2000
+  scoreCollectible: {fileID: 7563638756546119839, guid: 61978f9b2e773c640bfb8d93b1f8ce2f, type: 3}
   phaseDescriptors:
   - sprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
     maxHealth: 2000
