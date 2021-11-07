@@ -30,7 +30,11 @@ public class Continue : MonoBehaviour
             }
             if (GameManager.instance.gameState == "continue" && Input.GetAxisRaw("Bomb") == 1 && cooldown < 0)
             {
-                countdownValue--;
+                // Avoid overflowing to negative values
+                if (countdownValue > 1)
+                {
+                    countdownValue--;
+                }
                 countdownTextObj.text = countDownMax.ToString();
                 countdownTextObj.text = countdownValue.ToString();
                 cooldown = 0.1f;
