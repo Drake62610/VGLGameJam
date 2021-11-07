@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     // GameObjects
     public GameObject bulletPrefab;
     public GameObject hitBox;
@@ -19,7 +18,6 @@ public class Player : MonoBehaviour
     public float fireDelay;
     public float focusModifier;
     public float maxHealth = 3f;
-    public int invincibilityTime = 30;
 
     //Locals
     float activeModifier = 1;
@@ -27,28 +25,22 @@ public class Player : MonoBehaviour
 
     //Private
     private float health;
-    private bool invincibilityState;
+
+    private SpriteRenderer sprite;
+    private bool isInvincible = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        invincibilityState = false;
         rb2D = GetComponent<Rigidbody2D>();
         health = maxHealth;
         lifeBar.fillAmount = 1;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (invincibilityState == true && invincibilityTime > 0)
-        {
-            invincibilityTime -= 1;
-            if (invincibilityTime == 0)
-            {
-                invincibilityState = false;
-            }
-        }
         if (cooldown >= 0)
         {
             cooldown -= Time.deltaTime;
@@ -77,8 +69,7 @@ public class Player : MonoBehaviour
     {
         health = maxHealth;
         lifeBar.fillAmount = 1;
-        invincibilityTime = 30;
-        invincibilityState = true;
+        MakeInvincible();
     }
 
     private void FixedUpdate()
@@ -86,23 +77,47 @@ public class Player : MonoBehaviour
         Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
         rb2D.MovePosition(rb2D.position + velocity);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "enemyBullet")
-        {
-            if (invincibilityState == false)
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "enemyBullet" && !isInvincible) {
+            lifeBar.fillAmount -= 1f / maxHealth;
+            audioSourceHit.Play();
+            health--;
+            if (health <= 0) {
+                // Destruction Sequence
+                GameManager.instance.TriggerContinue();
+            }
+            else
             {
-                lifeBar.fillAmount -= 1f / maxHealth;
-                audioSourceHit.Play();
-                health--;
-                if (health <= 0)
-                {
-                    // Destruction Sequence
-                    GameManager.instance.TriggerContinue();
-                }
+                MakeInvincible();
             }
             Destroy(other.gameObject);
         }
+    }
+
+    private void MakeInvincible()
+    {
+        isInvincible = true;
+        StartCoroutine("BlinkPlayerSprite");
+        Invoke("StopInvincible", 1.5f);
+    }
+
+
+    //Coroutine
+    private IEnumerator BlinkPlayerSprite()
+    {
+        const float blinkSpd = 0.05f;
+        while (isInvincible)
+        {
+            sprite.enabled = !sprite.enabled;
+            yield return new WaitForSeconds(blinkSpd);
+            sprite.enabled = !sprite.enabled;
+            yield return new WaitForSeconds(blinkSpd);
+        }
+        sprite.enabled = true;
+    }
+
+    private void StopInvincible()
+    {
+        isInvincible = false;
     }
 }

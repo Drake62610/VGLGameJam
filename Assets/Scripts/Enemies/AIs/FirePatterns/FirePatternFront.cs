@@ -5,15 +5,18 @@ using UnityEngine;
 public class FirePatternFront : MonoBehaviour
 {
     public float fireRate;
+    // If set to 0 is disabled
+    public float shootingDelay;
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
-    private GameObject gameField;
-    private float cooldownTime = 0;
+    public float cooldownTime = 0;
 
     private void Awake()
     {
-        gameField = GameObject.Find("GameField");
+        if (shootingDelay != 0) {
+            cooldownTime = shootingDelay;
+        }
     }
 
     // Update is called once per frame

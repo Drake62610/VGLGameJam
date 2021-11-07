@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2742915442765584914}
   - component: {fileID: 577884654518247184}
   m_Layer: 0
-  m_Name: EnemyFireHoming
-  m_TagString: enemy
+  m_Name: EnemyNotFiring
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,9 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065bf12be6fc4d449b27753a50a5ee93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
-  bulletGameObject: {fileID: 2767295866381788651, guid: f069caf9c462695499a6e99ab98b38ae, type: 3}
+  fireRate: 300
+  shootingDelay: 0
+  bulletGameObject: {fileID: 2767295866381788651, guid: 3dd8bf7ee7547224ca29a0c0f05e24cf, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
+  cooldownTime: 0
 --- !u!1 &4751783076408367153
 GameObject:
   m_ObjectHideFlags: 0

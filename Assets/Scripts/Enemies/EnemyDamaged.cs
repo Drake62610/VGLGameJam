@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class EnemyDamaged : MonoBehaviour
 {
-    public int health;
+    public int maxHealth;
     public int scoreValue;
     public AudioClip deathClip;
+    public int health;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
+    {
+        health = maxHealth;
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "playerBullet")
         {
