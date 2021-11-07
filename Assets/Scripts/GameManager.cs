@@ -7,21 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    private string gameState;
-    public string gameOverScene;
+    public int playerScore;
+    private int level = 1;
+    public string gameState;
+    private GameObject continueEvent;
 
-    // Continue Feature
-    public GameObject continueEvent;
-    public int countDownMax = 10;
-    private int countdownValue;
-    private float cooldown=0;
 
-    public float playerHealth;
-    public Text scoreText;
-    private int playerScore;
-
-    private void Awake() {
-        if (instance == null) {
+    private void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
         }
         else if (instance != this)
@@ -30,86 +25,40 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+        InitGame();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void InitGame()
     {
+
+        continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
         continueEvent.SetActive(false);
-        gameState = "menu";
+        gameState = "initGame";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (cooldown >= 0) {
-            cooldown -= Time.unscaledDeltaTime;
-        }
-        if (gameState=="continue" && Input.GetAxisRaw("Fire1") == 1)
-        {
-            continuing();
-        }
-        if (gameState=="continue" && Input.GetAxisRaw("Bomb") == 1 && cooldown < 0 )
-        {
-            countdownValue--;
-            Text countdownTextObj = continueEvent.GetComponentsInChildren<Text>()[1];
-            countdownTextObj.text = countDownMax.ToString();
-            countdownTextObj.text = countdownValue.ToString();
-            cooldown = 0.1f;
-        }
-    }
-
-    public void triggerContinue()
+    public void TriggerContinue()
     {
         Time.timeScale = 0;
         gameState = "continue";
-
-
-        StartCoroutine(countdown());
+        continueEvent.SetActive(true);
+        continueEvent.BroadcastMessage("StartCountdown");
     }
 
-    private void gameOver()
+    public void RestartGame()
     {
-        gameState = "gameover";
-        SceneManager.LoadScene(gameOverScene);
-    }
-
-    private void continuing()
-    {
-        StopAllCoroutines();
         continueEvent.SetActive(false);
-        // SCORE RESET
-        // INVINCIBILITY
-        // RESPAWN
-
+        playerScore = 0;
+        GameObject.FindGameObjectsWithTag("player")[0].BroadcastMessage("Respawn");
         Time.timeScale = 1;
         gameState = "playing";
     }
 
-    // COROUTINE
-    private IEnumerator countdown()
+    public void GameOver()
     {
-        // Get countdown text
-        Text countdownTextObj = continueEvent.GetComponentsInChildren<Text>()[1];
-        countdownTextObj.text = countDownMax.ToString();
-
-        continueEvent.SetActive(true);
-
-        for (countdownValue = countDownMax-1; countdownValue >= 0; countdownValue--)
-        {
-            yield return new WaitForSecondsRealtime(1);
-            countdownTextObj.text = countdownValue.ToString();
-        }
-
         continueEvent.SetActive(false);
-        Time.timeScale = 1;
-        gameOver();
+        gameState = "gameOver";
+        SceneManager.LoadScene("GameOver");
     }
 
-    public void AddScore(int toAdd)
-    {
-        playerScore += toAdd;
-        scoreText.text = playerScore.ToString("00000000");
-    }
 }
 

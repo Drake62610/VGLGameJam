@@ -25,7 +25,7 @@ public class EnemyDamaged : MonoBehaviour
     {
         // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
         AudioSource.PlayClipAtPoint(deathClip, gameObject.transform.position);
-        GameManager.instance.AddScore(scoreValue);
+        GameManager.instance.playerScore += scoreValue;
         Destroy(this.gameObject);
     }
 }
