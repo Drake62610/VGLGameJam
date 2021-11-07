@@ -14,7 +14,7 @@ public class EnemyDamaged : MonoBehaviour
         health = maxHealth;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "playerBullet")
         {
@@ -27,7 +27,7 @@ public class EnemyDamaged : MonoBehaviour
         }
     }
 
-    private void DestroyOnKill()
+    protected void DestroyOnKill()
     {
         // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
         AudioSource.PlayClipAtPoint(deathClip, gameObject.transform.position);
