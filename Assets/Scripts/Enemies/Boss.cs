@@ -20,6 +20,7 @@ public struct BossPhaseDescriptor
 
 public class Boss : EnemyDamaged
 {
+    public GameObject scoreCollectible;
     public List<BossPhaseDescriptor> phaseDescriptors = new List<BossPhaseDescriptor>();
     public int nbStocks = 3;
     public bool IsActivated { get; private set; }
@@ -72,6 +73,7 @@ public class Boss : EnemyDamaged
         if (nbStocks == 0)
         {
             base.DestroyOnKill();
+            ConvertAllBulletsToScore();
             return;
         }
 
@@ -88,5 +90,14 @@ public class Boss : EnemyDamaged
     {
         bossLifeBar.gameObject.SetActive(true);
         IsActivated = true;
+    }
+
+    private void ConvertAllBulletsToScore()
+    {
+        foreach (var bullet in GameObject.FindGameObjectsWithTag("enemyBullet"))
+        {
+            Instantiate(scoreCollectible, bullet.transform.position, Quaternion.identity);
+            Destroy(bullet);
+        }
     }
 }

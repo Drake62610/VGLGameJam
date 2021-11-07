@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private int level = 1;
     public string gameState;
     private GameObject continueEvent;
+    private GameObject levelLoader;
+    private bool loadLevel = true;
 
 
     private void Awake()
@@ -30,8 +32,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
+        levelLoader =  GameObject.FindGameObjectsWithTag("load")[0];
         continueEvent.SetActive(false);
         gameState = "initGame";
+    }
+
+    private void Update() {
+        if(loadLevel == true) {
+            {
+                levelLoader.BroadcastMessage("PrepareToStart");
+                loadLevel = false;
+            }
+        }
     }
 
     public void TriggerContinue()

@@ -10,8 +10,7 @@ public class Level01Descriptor : MonoBehaviour
 
     public GameObject gameField;
 
-    // Start is called before the first frame update
-    void Start()
+    public void LevelStart()
     {
         foreach (var enemySpawnData in enemiesSpawnData)
         {
