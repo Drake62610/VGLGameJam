@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8945647125464429742}
   - component: {fileID: 5938255474872472228}
   m_Layer: 3
-  m_Name: HommingBullet
+  m_Name: HomingBullet
   m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
 --- !u!114 &5938255474872472228
 MonoBehaviour:

@@ -239,11 +239,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1.2
-  bulletGameObject: {fileID: 2767295866381788651, guid: f069caf9c462695499a6e99ab98b38ae, type: 3}
+  homingBulletGameObject: {fileID: 2767295866381788651, guid: f069caf9c462695499a6e99ab98b38ae, type: 3}
+  simpleAngledBulletGameObject: {fileID: 2767295866381788651, guid: 145fa6d6b8e54264f826fa3542153014, type: 3}
+  slowSimpleAngledBulletGameObject: {fileID: 2767295866381788651, guid: 11f28ccf3736817419f87b2068619f25, type: 3}
   middleBulletSpawnPoint: {fileID: 1123737487516236846}
   leftBulletSpawnPoint: {fileID: 8074087212498921454}
   rightBulletSpawnPoint: {fileID: 6094687743774781174}
-  phase: 0
 --- !u!114 &4004123573714145584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +261,6 @@ MonoBehaviour:
   scoreValue: 10000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
   health: 2500
+  secondPhaseSprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
+  thirdPhaseSprite: {fileID: 21300000, guid: 104b09ae192669b4ca8699740b8c9919, type: 3}
+  nbStocks: 3

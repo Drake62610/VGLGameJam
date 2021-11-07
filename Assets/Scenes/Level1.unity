@@ -1566,6 +1566,7 @@ GameObject:
   - component: {fileID: 1246342594}
   - component: {fileID: 1246342596}
   - component: {fileID: 1246342595}
+  - component: {fileID: 1246342597}
   m_Layer: 0
   m_Name: BossLifeBar
   m_TagString: Untagged
@@ -1630,6 +1631,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246342593}
   m_CullTransparentMesh: 1
+--- !u!114 &1246342597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246342593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cf6332d369bb24d99f55b480aaf783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeBarSecondPhaseSprite: {fileID: 21300000, guid: 294f0bfb5730d5045beba3cfbbf390cf, type: 3}
+  lifeBarThirdPhaseSprite: {fileID: 21300000, guid: 77312ccae8b634e4b9c19b522ab9b6fa, type: 3}
 --- !u!1 &1435413147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5253948913102126153, guid: eabe245f187f35f4d976821d85f26fe4, type: 3}
+      propertyPath: slowSimpleAngledBulletGameObject
+      value: 
+      objectReference: {fileID: 2767295866381788651, guid: 11f28ccf3736817419f87b2068619f25, type: 3}
     - target: {fileID: 8977053816036207941, guid: eabe245f187f35f4d976821d85f26fe4, type: 3}
       propertyPath: m_Name
       value: Level1Boss
