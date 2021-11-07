@@ -153,15 +153,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesSpawnData:
-  - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 0
+  - spawnPosition: {x: -5.5, y: 11, z: 0}
+    spawnTime: 3
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
-  - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 0.5
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -6.5, y: 11, z: 0}
+    spawnTime: 2
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
-  - spawnPosition: {x: -6, y: 7, z: 0}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -7.5, y: 11, z: 0}
     spawnTime: 1
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 4.5, y: 11, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 5.5, y: 11, z: 0}
+    spawnTime: 1
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 6.5, y: 11, z: 0}
+    spawnTime: 2
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 7.5, y: 11, z: 0}
+    spawnTime: 3
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
   gameField: {fileID: 515675574}
 --- !u!4 &51818046
 Transform:
@@ -305,7 +324,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &204961297
@@ -805,7 +824,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &515675574
@@ -1015,6 +1034,7 @@ MonoBehaviour:
   continueEvent: {fileID: 1465682102}
   countDownMax: 10
   playerHealth: 0
+  scoreText: {fileID: 204961299}
 --- !u!4 &762097553
 Transform:
   m_ObjectHideFlags: 0
@@ -1402,7 +1422,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1205263267
@@ -1533,7 +1553,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1435413147
