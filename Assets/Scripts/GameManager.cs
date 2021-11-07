@@ -25,12 +25,10 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-        InitGame();
     }
 
-    private void InitGame()
+    void Start()
     {
-
         continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
         continueEvent.SetActive(false);
         gameState = "initGame";
@@ -55,9 +53,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        continueEvent.SetActive(false);
         gameState = "gameOver";
         SceneManager.LoadScene("GameOver");
+        Destroy(this.gameObject);
     }
 
 }
