@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePatternDirection : MonoBehaviour
+public class FirePatternDirection : IFirePattern
 {
 
     private GameObject[] players;
@@ -17,11 +17,10 @@ public class FirePatternDirection : MonoBehaviour
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
-    public float cooldownTime = 0;
 
     public float speed = 5f;
     public float ttl = 5f;
-    public Vector3 direction = new Vector3(0, 1, 0);
+    public Vector3 direction = new Vector3(0, -1, 0);
 
     public Color color = new Color(0, 0, 0);
 
@@ -36,6 +35,7 @@ public class FirePatternDirection : MonoBehaviour
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("player");
+        cooldownTime = 0;
 
     }
 
@@ -66,7 +66,13 @@ public class FirePatternDirection : MonoBehaviour
             // Bullet Mode
             if (behaviorType == "random")
             {
-                Fire(new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0.2f, 1f), 0).normalized);
+                color = new Color(
+                    Random.Range(0f, 1f), //Red
+                    Random.Range(0f, 1f), //Green
+                    Random.Range(0f, 1f), //Blue
+                    1
+                );
+                Fire(new Vector3(UnityEngine.Random.Range(-1f, 1f), -UnityEngine.Random.Range(0.2f, 1f), 0).normalized);
             }
             else if (behaviorType == "homming")
             {
@@ -82,8 +88,8 @@ public class FirePatternDirection : MonoBehaviour
     private void Fire(Vector3 d)
     {
         GameObject bullet = Instantiate(bulletGameObject, bulletSpawnPoint.position, Quaternion.identity);
-        bullet.GetComponent<IParametrableBullet>().speed = 5f;
-        bullet.GetComponent<IParametrableBullet>().ttl = 20f;
+        bullet.GetComponent<IParametrableBullet>().speed = speed;
+        bullet.GetComponent<IParametrableBullet>().ttl = ttl;
         bullet.GetComponent<IParametrableBullet>().direction = d;
         bullet.GetComponent<SpriteRenderer>().color = color;
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireCirclePattern : MonoBehaviour
+public class FireCirclePattern : IFirePattern
 {
     public float fireRate;
     // If set to 0 is disabled
