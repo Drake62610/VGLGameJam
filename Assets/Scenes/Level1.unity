@@ -154,133 +154,321 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesSpawnData:
   - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 1
+    spawnTime: 3
     enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
   - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 1.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 2
-    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: 6, y: 8, z: 0}
     spawnTime: 3.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 7, z: 0}
+    spawnTime: 4
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 4.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 5.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: -6, y: 7, z: 0}
+    spawnTime: 8
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 7, z: 0}
+    spawnTime: 8.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 7, z: 0}
+    spawnTime: 9
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 8
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 8.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 9
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 11.5
     enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 8, z: 0}
-    spawnTime: 4
-    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 6, y: 10, z: 0}
-    spawnTime: 4.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 6, y: 10, z: 0}
-    spawnTime: 5
-    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 0, y: 12, z: 0}
-    spawnTime: 7
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: 2, y: 12, z: 0}
-    spawnTime: 7.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: -2, y: 12, z: 0}
-    spawnTime: 8
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: 6, y: 10, z: 0}
-    spawnTime: 10
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: -6, y: 9, z: 0}
-    spawnTime: 10
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: 6, y: 10, z: 0}
-    spawnTime: 11
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: -6, y: 9, z: 0}
-    spawnTime: 11
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: -6, y: 9, z: 0}
     spawnTime: 12
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 10, z: 0}
-    spawnTime: 11
-    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    spawnTime: 12.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 10, z: 0}
+    spawnTime: 13
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 8, z: 0}
     spawnTime: 15
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 8, z: 0}
     spawnTime: 15.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 6, y: 9, z: 0}
-    spawnTime: 15.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 6, y: 9, z: 0}
-    spawnTime: 16
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 10, z: 0}
     spawnTime: 16
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 10, z: 0}
     spawnTime: 16.5
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: -6, y: 7, z: 0}
-    spawnTime: 20
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+  - spawnPosition: {x: -5, y: 7, z: 0}
+    spawnTime: 15
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: -6, y: 8, z: 0}
-    spawnTime: 20
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+  - spawnPosition: {x: -5, y: 7, z: 0}
+    spawnTime: 15.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -5, y: 9, z: 0}
+    spawnTime: 16
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -5, y: 9, z: 0}
+    spawnTime: 16.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -0.1, y: 12, z: 0}
+    spawnTime: 19
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 0, y: 12, z: 0}
+    spawnTime: 19
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 2, y: 12, z: 0}
+    spawnTime: 19
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -2, y: 12, z: 0}
+    spawnTime: 19
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -7, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -8, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -9, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 6, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 7, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 8, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 9, y: 5, z: 0}
+    spawnTime: 23
+    enemyGameObject: {fileID: 2742915442765584913, guid: be421ff2297f73d43a502462550042f9, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 2, y: 12, z: 0}
+    spawnTime: 24
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -2, y: 12, z: 0}
+    spawnTime: 24
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -3.6, y: 13, z: 0}
+    spawnTime: 24
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 3.6, y: 13, z: 0}
+    spawnTime: 24
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 7, y: 9, z: 0}
+    spawnTime: 32
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
   - spawnPosition: {x: -6, y: 9, z: 0}
-    spawnTime: 20
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
-  - spawnPosition: {x: -3, y: 12, z: 0}
-    spawnTime: 20
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: 3, y: 12, z: 0}
-    spawnTime: 20
-    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: 6, y: 7, z: 0}
-    spawnTime: 20
+    spawnTime: 32
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 8, y: 9, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -7, y: 9, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 9, y: 9, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -8, y: 9, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -10, y: 5, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 10, y: 5, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: -9, y: 7, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 9, y: 7, z: 0}
+    spawnTime: 35
+    enemyGameObject: {fileID: 2742915442765584913, guid: c39281614981dfc4d989e6cc1d196f37, type: 3}
+    enemyMovementBehaviorScriptName: SlowEnemyAIScrollGeneralizedPause
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 40
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 8, z: 0}
-    spawnTime: 20
+    spawnTime: 40.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 41
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: -6, y: 9, z: 0}
+    spawnTime: 42.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 9, z: 0}
+    spawnTime: 43
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 9, z: 0}
+    spawnTime: 43.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: -6, y: 9, z: 0}
+    spawnTime: 44
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 8, z: 0}
+    spawnTime: 48
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
   - spawnPosition: {x: 6, y: 9, z: 0}
-    spawnTime: 20
+    spawnTime: 48
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
     enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
-  - spawnPosition: {x: 2, y: 12, z: 0}
-    spawnTime: 25
+  - spawnPosition: {x: 6, y: 10, z: 0}
+    spawnTime: 48
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
-  - spawnPosition: {x: -2, y: 12, z: 0}
-    spawnTime: 25
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: -6, y: 8, z: 0}
+    spawnTime: 48
     enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
-    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeave
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 9, z: 0}
+    spawnTime: 48
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 48
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 50
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 50.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 51
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 51.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: -6, y: 10, z: 0}
+    spawnTime: 52
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: 6, y: 9, z: 0}
+    spawnTime: 50
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 9, z: 0}
+    spawnTime: 50.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 9, z: 0}
+    spawnTime: 51
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 9, z: 0}
+    spawnTime: 51.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: 6, y: 9, z: 0}
+    spawnTime: 52
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  - spawnPosition: {x: -5, y: 13, z: 0}
+    spawnTime: 50.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -5, y: 13, z: 0}
+    spawnTime: 50.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -6, y: 13, z: 0}
+    spawnTime: 51
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: -7, y: 13, z: 0}
+    spawnTime: 51.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 6, y: 13, z: 0}
+    spawnTime: 51
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 7, y: 13, z: 0}
+    spawnTime: 51.5
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
+  - spawnPosition: {x: 8, y: 13, z: 0}
+    spawnTime: 52
+    enemyGameObject: {fileID: 2742915442765584913, guid: a07f9425c8c311b42ac0ab1d2fad8967, type: 3}
+    enemyMovementBehaviorScriptName: EnemyMoveToCenterWaitThenLeaveGeneralized
   gameField: {fileID: 515675574}
 --- !u!4 &51818046
 Transform:
@@ -2333,3 +2521,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1953302126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953302128}
+  - component: {fileID: 1953302127}
+  m_Layer: 0
+  m_Name: Level01Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1953302127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953302126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242adb7a1bbea514b8d7ed3c1e12b265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesSpawnData:
+  - spawnPosition: {x: -5, y: 8, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollLeftToRight
+  - spawnPosition: {x: 6, y: 10, z: 0}
+    spawnTime: 0
+    enemyGameObject: {fileID: 2742915442765584913, guid: 58846159b1aad324882fe89dc8e55af0, type: 3}
+    enemyMovementBehaviorScriptName: EnemyAIScrollRightToLeft
+  gameField: {fileID: 515675574}
+--- !u!4 &1953302128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953302126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03615874, y: -5.3840027, z: -0.007964503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
