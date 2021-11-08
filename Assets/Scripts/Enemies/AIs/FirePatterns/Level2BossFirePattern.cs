@@ -62,10 +62,32 @@ public class Level2BossFirePattern : MonoBehaviour
         {
             if (cooldownTime < 0)
             {
-                Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
-                Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
-                Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
-                cooldownTime = 1.5f;
+                // Fire bouncing bullets on the side
+                var bullet = Instantiate(bouncingBulletGameObject, leftBulletSpawnPoint.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(Random.Range(-1f, -0.3f), Random.Range(-1, -0.3f), 0).normalized;
+                bullet.GetComponent<SpriteRenderer>().color = Color.green;
+
+                bullet = Instantiate(bouncingBulletGameObject, rightBulletSpawnPoint.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(Random.Range(0.3f, 1f), Random.Range(-1, -0.3f), 0).normalized;
+                bullet.GetComponent<SpriteRenderer>().color = Color.green;
+
+                // Fire three lasers from the main cannon
+                // Left one
+                bullet = Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(Random.Range(-1f, -0.7f), Random.Range(-1, -0.7f), 0).normalized;
+                bullet.GetComponent<SpriteRenderer>().color = Color.red;
+
+                // Middle one
+                bullet = Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(Random.Range(-0.1f, 0.1f), -Random.Range(0.2f, 1f), 0).normalized;
+                bullet.GetComponent<SpriteRenderer>().color = Color.red;
+
+                // Right one
+                bullet = Instantiate(laserBulletGameObject, middleBulletSpawnPoint.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(Random.Range(0.7f, 1f), Random.Range(-1, -0.7f), 0).normalized;
+                bullet.GetComponent<SpriteRenderer>().color = Color.red;
+
+                cooldownTime = 1f;
             }
         }
     }
