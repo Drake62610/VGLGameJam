@@ -17,10 +17,12 @@ public class Level2BossFirePattern : MonoBehaviour
     private float secondCooldownTime = 0;
     private int firingCannonIdx;
     private Boss bossData;
+    private GameObject gameField;
 
     private void Awake()
     {
         bossData = GetComponent<Boss>();
+        gameField = GameObject.Find("GameField");
         firingCannonIdx = 0;
     }
 
@@ -90,6 +92,26 @@ public class Level2BossFirePattern : MonoBehaviour
                 cooldownTime = 1f;
             }
         }
+        else if (bossData.nbStocks == 1)
+        {
+            if (cooldownTime < 0)
+            {
+                FireCircleSpread(middleBulletSpawnPoint.position, simpleParametrableBulletGameObject, Color.blue);
+                FireCircleSpread(leftBulletSpawnPoint.position, simpleParametrableBulletGameObject, Color.blue);
+                FireCircleSpread(rightBulletSpawnPoint.position, simpleParametrableBulletGameObject, Color.blue);
+                cooldownTime = 1f;
+            }
+
+            if (secondCooldownTime < 0)
+            {
+                var bullet = Instantiate(simpleParametrableBulletGameObject, new Vector3(Random.Range(-5.5f, 5.5f), 0, 0) + gameField.transform.position, Quaternion.identity);
+                bullet.GetComponent<IParametrableBullet>().direction = new Vector3(0, 1, 0).normalized;
+                bullet.GetComponent<IParametrableBullet>().speed *= 0.20f;
+                bullet.GetComponent<IParametrableBullet>().ttl = 20f;
+                bullet.GetComponent<SpriteRenderer>().color = Color.yellow;
+                secondCooldownTime = 0.125f;
+            }
+        }
     }
 
     IEnumerator FireBigCone(Vector3 bulletSpawnPosition, GameObject bulletGameObject, int nbBulletsToSpawn, float randomRange, Color color)
@@ -106,5 +128,26 @@ public class Level2BossFirePattern : MonoBehaviour
             yield return new WaitForSeconds(0.0001f);
         }
         yield return null;
+    }
+
+
+    private void FireCircleSpread(Vector3 bulletSpawnPosition, GameObject bulletGameObject, Color color)
+    {
+        GameObject bullet;
+        const float radius = 0.5f;
+        const int numberOfBullets = 16;
+
+        for (var i = 0; i < numberOfBullets; i++)
+        {
+            var x = bulletSpawnPosition.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
+            var y = bulletSpawnPosition.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
+
+            bullet = Instantiate(bulletGameObject, new Vector3(x, y, 0), Quaternion.identity);
+
+            bullet.GetComponent<IParametrableBullet>().speed = 2f;
+            bullet.GetComponent<IParametrableBullet>().ttl = 10f;
+            bullet.GetComponent<IParametrableBullet>().direction = bullet.gameObject.transform.position - bulletSpawnPosition;
+            bullet.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
     }
 }
