@@ -241,7 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startText: {fileID: 239515240}
   firstScene: TransitionLevel1
-  clickClip: {fileID: 8300000, guid: 6f7c4e78880c7764ca35ad7c31b0ade1, type: 3}
 --- !u!1 &239515238
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +408,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '2021 Celestis Studios
 
-    Licensed By GoodGames Enterprises'
+    Licensed By NotTouhou Enterprises'
 --- !u!222 &412330291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -727,9 +726,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'JEU DE TIR (NOT TOUHOU)
+  m_Text: 'LES DEFENSEURS DE
 
-    ARCADE'
+    DOMINARIA'
 --- !u!222 &1996417659
 CanvasRenderer:
   m_ObjectHideFlags: 0
