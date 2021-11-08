@@ -10,6 +10,8 @@ public class TitleScreen : MonoBehaviour
     public Text startText;
     public string firstScene;
 
+    public float cooldown = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,12 @@ public class TitleScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Fire1") == 1)
+        if (cooldown<0 && Input.GetAxis("Fire1") == 1)
         {
             SceneManager.LoadScene(firstScene);
         }
+
+        cooldown -= Time.deltaTime;
     }
 
     //Coroutine
