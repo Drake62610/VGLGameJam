@@ -63,11 +63,7 @@ public class GameManager : MonoBehaviour
     public void ChangeLevel()
     {
         level += 1;
-        Debug.Log(level);
-        if (level == 2)
-            levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
-        else
-            GameOver();
+        levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void TriggerContinue()
