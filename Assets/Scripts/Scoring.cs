@@ -15,6 +15,7 @@ public class Scoring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance != null)
         scoreText.text = GameManager.instance.playerScore.ToString("00000000");
     }
 }
