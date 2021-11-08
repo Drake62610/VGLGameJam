@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isInvincible);
         if (cooldown >= 0)
         {
             cooldown -= Time.deltaTime;
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "enemyBullet" && !isInvincible) {
+        if (!isInvincible && (other.tag == "enemyBullet" || other.tag == "enemy")) {
             lifeBar.fillAmount -= 1f / maxHealth;
             audioSourceHit.Play();
             health--;
@@ -94,7 +95,9 @@ public class Player : MonoBehaviour
             {
                 MakeInvincible();
             }
-            Destroy(other.gameObject);
+            if (other.tag == "enemyBullet") {
+                Destroy(other.gameObject);
+            }
         }
     }
 

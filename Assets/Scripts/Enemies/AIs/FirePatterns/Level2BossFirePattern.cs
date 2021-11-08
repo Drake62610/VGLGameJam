@@ -56,7 +56,7 @@ public class Level2BossFirePattern : MonoBehaviour
                     transformCannonToFire = rightBulletSpawnPoint;
                     firingCannonIdx = 0;
                 }
-                StartCoroutine(FireBigCone(transformCannonToFire.position, simpleParametrableBulletGameObject, 70, 0.15f, Color.cyan));
+                StartCoroutine(FireBigCone(transformCannonToFire.position, simpleParametrableBulletGameObject, 80, 0.17f, Color.cyan));
                 secondCooldownTime = 2.25f;
             }
         }

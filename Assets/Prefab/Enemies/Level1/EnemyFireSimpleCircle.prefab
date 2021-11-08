@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5224580876084983346}
   m_Layer: 0
   m_Name: EnemyFireSimpleCircle
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0029671192, y: 0.013472885}
+  m_Offset: {x: -0.014732122, y: 0.013472915}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8318496, y: 1.6434777}
+  m_Size: {x: 1.451479, y: 1.6434777}
   m_EdgeRadius: 0
 --- !u!50 &-5321561526618604284
 Rigidbody2D:

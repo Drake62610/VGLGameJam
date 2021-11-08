@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9178901528410067607}
   m_Layer: 0
   m_Name: SlowEnemyFiringAngledFront
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065bf12be6fc4d449b27753a50a5ee93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownTime: 0
   fireRate: 0.5
   shootingDelay: 0
   bulletGameObject: {fileID: 2767295866381788651, guid: 11f28ccf3736817419f87b2068619f25, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
-  cooldownTime: 0
 --- !u!95 &9178901528410067607
 Animator:
   serializedVersion: 3
