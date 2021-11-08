@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
-  scoreValue: 1000
+  scoreValue: 500
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
   health: 50
 --- !u!114 &577884654518247184
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065bf12be6fc4d449b27753a50a5ee93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownTime: 0
   fireRate: 300
   shootingDelay: 0
   bulletGameObject: {fileID: 2767295866381788651, guid: 3dd8bf7ee7547224ca29a0c0f05e24cf, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
-  cooldownTime: 0
 --- !u!95 &5082653312097161144
 Animator:
   serializedVersion: 3

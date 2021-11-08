@@ -35,12 +35,20 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        if(loadLevel == true) {
+        if (loadLevel == true) {
             {
-                levelLoader =  GameObject.FindGameObjectsWithTag("load")[0];
-                continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
-                continueEvent.SetActive(false);
-                levelLoader.BroadcastMessage("PrepareToStart");
+                var loads = GameObject.FindGameObjectsWithTag("load");
+                if (loads.Length != 0)
+                {
+                    levelLoader = loads[0];
+                    levelLoader.BroadcastMessage("PrepareToStart");
+                }
+                var continues = GameObject.FindGameObjectsWithTag("continue");
+                if (continues.Length != 0)
+                {
+                    continueEvent = continues[0];
+                    continueEvent.SetActive(false);
+                }
                 loadLevel = false;
             }
         }
@@ -55,6 +63,7 @@ public class GameManager : MonoBehaviour
     public void ChangeLevel()
     {
         level += 1;
+        Debug.Log(level);
         if (level == 2)
             levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
         else
@@ -84,6 +93,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
         Destroy(this.gameObject);
     }
-
 }
 
