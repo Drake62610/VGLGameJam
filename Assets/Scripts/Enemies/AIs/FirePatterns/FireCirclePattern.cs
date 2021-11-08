@@ -9,6 +9,8 @@ public class FireCirclePattern : IFirePattern
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
+    public float shootingDelay = 0f;
+
     public string behaviorType;
 
     private GameObject[] players;
@@ -22,19 +24,6 @@ public class FireCirclePattern : IFirePattern
 
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("player");
-        if (players.Length == 0)
-        {
-            playerPosition = new Vector3(1, 1, 0).normalized;
-
-        }
-        else
-        {
-            playerPosition = players[0].transform.position;
-        }
-        playerDirection = (playerPosition - transform.position).normalized;
-
-
         if (behaviorType == "circleSpread")
         {
             StartCoroutine(FireCircleSpread());
@@ -54,12 +43,17 @@ public class FireCirclePattern : IFirePattern
     {
         List<GameObject> bullets;
         GameObject bullet;
+        yield return new WaitForSeconds(shootingDelay);
 
-        while (fireRate > 0)
+        while (fireRate > -0.1f)
         {
+
             bullets = new List<GameObject>();
             for (var i = 0; i < numberOfBullets; i++)
             {
+
+                playerDirection = (playerPosition - transform.position).normalized;
+
                 var x = bulletSpawnPoint.position.x + radius * Mathf.Cos(2 * Mathf.PI * i / numberOfBullets);
                 var y = bulletSpawnPoint.position.y + radius * Mathf.Sin(2 * Mathf.PI * i / numberOfBullets);
 
@@ -70,11 +64,24 @@ public class FireCirclePattern : IFirePattern
 
                 bullets.Add(bullet);
 
-                yield return new WaitForSeconds(1 / numberOfBullets);
+                yield return new WaitForSeconds((float)(0.5f / numberOfBullets));
+            }
+
+            players = GameObject.FindGameObjectsWithTag("player");
+            if (players.Length == 0)
+            {
+                playerPosition = new Vector3(1, 1, 0).normalized;
+
+            }
+            else
+            {
+                playerPosition = players[0].transform.position;
             }
 
             for (var i = 0; i < numberOfBullets; i++)
             {
+
+
                 bullets[i].GetComponent<IParametrableBullet>().speed = 5f;
                 bullets[i].GetComponent<IParametrableBullet>().ttl = 20f;
                 bullets[i].GetComponent<IParametrableBullet>().direction = playerDirection;
@@ -87,8 +94,9 @@ public class FireCirclePattern : IFirePattern
     {
         List<GameObject> bullets;
         GameObject bullet;
+        yield return new WaitForSeconds(shootingDelay);
 
-        while (fireRate > 0)
+        while (fireRate > -0.1f)
         {
             bullets = new List<GameObject>();
             for (var i = 0; i < numberOfBullets; i++)

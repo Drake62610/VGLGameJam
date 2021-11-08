@@ -17,6 +17,8 @@ public class FirePatternDirection : IFirePattern
     public GameObject bulletGameObject;
     public Transform bulletSpawnPoint;
 
+    public int disableRandomColor = 0;
+
 
     public float speed = 5f;
     public float ttl = 5f;
@@ -68,12 +70,16 @@ public class FirePatternDirection : IFirePattern
             // Bullet Mode
             if (behaviorType == "random")
             {
-                color = new Color(
+                if (disableRandomColor == 0)
+                {
+                    color = new Color(
                     Random.Range(0f, 1f), //Red
                     Random.Range(0f, 1f), //Green
                     Random.Range(0f, 1f), //Blue
                     1
-                );
+                    );
+                }
+
                 Fire(new Vector3(UnityEngine.Random.Range(-randomRange, randomRange), -UnityEngine.Random.Range(0.2f, 1f), 0).normalized);
             }
             else if (behaviorType == "homming")

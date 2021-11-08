@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4388513847357873218}
   - component: {fileID: -5321561526618604284}
   - component: {fileID: 2742915442765584914}
-  - component: {fileID: 6081803921212204138}
+  - component: {fileID: 8578395498552584962}
+  - component: {fileID: 5224580876084983346}
   m_Layer: 0
-  m_Name: EnemyFiringBouncing
+  m_Name: EnemyFireSpreadCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2742915442765584913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.5, z: 1}
   m_Children:
   - {fileID: 3728808396574531899}
   m_Father: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28f36eafb5b73314cbc58c7a1f946de4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb44858880c20274c9d53cefe4b4c3fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -100,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014448166, y: 0.0011194348}
+  m_Offset: {x: -0.0029671192, y: 0.013472885}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 1.2}
+    oldSize: {x: 1.88, y: 1.88}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0347974, y: 1.0281614}
+  m_Size: {x: 0.8318496, y: 1.6434777}
   m_EdgeRadius: 0
 --- !u!50 &-5321561526618604284
 Rigidbody2D:
@@ -146,11 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21070658d73ec5947ac8089a714a6802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  scoreValue: 1000
+  maxHealth: 300
+  scoreValue: 5000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
   health: 50
---- !u!114 &6081803921212204138
+--- !u!114 &8578395498552584962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,20 +160,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 2742915442765584913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16181f4654fc4d646a4f31706c954160, type: 3}
+  m_Script: {fileID: 11500000, guid: b055381fdae57d6449a23b63228084aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0
-  behaviorType: 
-  fireRate: 0
-  shootingDelay: 0
-  bulletGameObject: {fileID: 0}
+  cooldownTime: 1
+  fireRate: 1
+  bulletGameObject: {fileID: 2767295866381788651, guid: b3ca3af97f053934a85b8162924ce488, type: 3}
   bulletSpawnPoint: {fileID: 3728808396574531899}
-  speed: 5
-  ttl: 10
-  direction: {x: 0, y: -1, z: 0}
-  randomRange: 1
-  color: {r: 0, g: 0, b: 0, a: 1}
+  shootingDelay: 3
+  behaviorType: circleSpread
+  numberOfBullets: 15
+  radius: 2
+--- !u!95 &5224580876084983346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742915442765584913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd5641d28030f7742bb29c3b0d7d316e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4751783076408367153
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4751783076408367153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalPosition: {x: 0, y: -0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2742915442765584912}
