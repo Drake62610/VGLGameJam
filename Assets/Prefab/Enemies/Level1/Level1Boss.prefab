@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: -6688800394400555214}
   - component: {fileID: 5253948913102126153}
   - component: {fileID: 4004123573714145584}
+  - component: {fileID: 5192754999823159587}
   m_Layer: 0
   m_Name: Level1Boss
   m_TagString: enemy
@@ -257,14 +258,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659445a5aa89b0c47bdc01622c3293d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2000
+  maxHealth: 1
   scoreValue: 10000
   deathClip: {fileID: 8300000, guid: 50a8f4c4cc545324681263554861afb9, type: 3}
-  health: 2000
+  health: 1
   scoreCollectible: {fileID: 7563638756546119839, guid: 61978f9b2e773c640bfb8d93b1f8ce2f, type: 3}
   phaseDescriptors:
   - sprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
-    maxHealth: 2000
+    maxHealth: 1
   - sprite: {fileID: 21300000, guid: 104b09ae192669b4ca8699740b8c9919, type: 3}
-    maxHealth: 2500
+    maxHealth: 1
   nbStocks: 3
+  phaseClip: {fileID: 8300000, guid: 90f7b86911aadaa4fb6787df3b5c06de, type: 3}
+--- !u!95 &5192754999823159587
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977053816036207941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 790e45e19a85a1545b5650f0eb5b5a1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

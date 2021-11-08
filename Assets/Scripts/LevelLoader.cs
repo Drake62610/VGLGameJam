@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class LevelLoader : MonoBehaviour
    public Animator canvasCamera;
    public Animator CanvasOverlay;
    public Animator GameField;
-   public Level01Descriptor level01Descriptor;
+   public Level01Descriptor levelDescriptor;
    public AudioSource audioSource;
    public float timeToDelay;
     
@@ -18,12 +19,29 @@ public class LevelLoader : MonoBehaviour
        StartCoroutine(StartLevel());
     }
 
+    public void ChangeLevel(int index)
+    {
+        StartCoroutine(NextLevel(index));
+
+    }
+
     IEnumerator StartLevel()
     {
         GameField.SetTrigger("Start");
         yield return new WaitForSecondsRealtime(timeToDelay);
         audioSource.Play();
-        level01Descriptor.LevelStart();
+        levelDescriptor.LevelStart();
+    }
+
+    IEnumerator NextLevel(int index)
+    {
+        yield return new WaitForSecondsRealtime(timeToDelay);
+        CanvasOverlay.SetTrigger("Level_End");
+        canvasCamera.SetTrigger("Level_End");
+        crossfadeTransition.SetTrigger("Level_End");
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadScene(index);
+        GameManager.instance.InitLevel();
     }
 
 

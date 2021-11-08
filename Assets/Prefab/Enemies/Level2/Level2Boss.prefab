@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: -3766301958587563833}
   - component: {fileID: 4210776922146949675}
   - component: {fileID: -4162923464608230995}
+  - component: {fileID: 439457012875408083}
   m_Layer: 0
   m_Name: Level2Boss
   m_TagString: enemy
@@ -268,3 +269,23 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: 0f4f5c714c289ee429868b59ebf765ce, type: 3}
     maxHealth: 2500
   nbStocks: 3
+  phaseClip: {fileID: 8300000, guid: 90f7b86911aadaa4fb6787df3b5c06de, type: 3}
+--- !u!95 &439457012875408083
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103089561663980473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13658a7639847a44698cfe8af1c9efc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -24,16 +24,19 @@ public class Boss : EnemyDamaged
     public List<BossPhaseDescriptor> phaseDescriptors = new List<BossPhaseDescriptor>();
     public int nbStocks = 3;
     public bool IsActivated { get; private set; }
+    public AudioClip phaseClip;
 
     private BossLifeBar bossLifeBar;
     private SpriteRenderer spriteRenderer;
     private int maxNbStocks;
+    private GameObject[] players;
 
     // Start is called before the first frame update
     void Start()
     {
         maxNbStocks = nbStocks;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        players = GameObject.FindGameObjectsWithTag("player");
 
         // Find BossLifeBar GameObject by name, even if it's disabled
         BossLifeBar[] objs = Resources.FindObjectsOfTypeAll<BossLifeBar>();
@@ -69,20 +72,26 @@ public class Boss : EnemyDamaged
 
     private void RemoveStock()
     {
+        foreach (var player in players)
+        {
+            player.BroadcastMessage("MakeActive", false);
+        }
         nbStocks -= 1;
         if (nbStocks == 0)
         {
             base.DestroyOnKill();
             ConvertAllBulletsToScore();
+            GameManager.instance.ChangeLevel();
+            return;
+        }
+        else if (nbStocks < 0)
+        {
             return;
         }
 
         int idx = maxNbStocks - nbStocks - 1;
-
         SetMaxHealth(phaseDescriptors[idx].maxHealth);
-        spriteRenderer.sprite = phaseDescriptors[idx].sprite;
-        bossLifeBar.SetFillAmount(1);
-        bossLifeBar.SetLifeBarIndex(nbStocks);
+        StartCoroutine(BossPhaseChanging(idx, nbStocks));
     }
 
     // Enable lifebar + enable firing
@@ -98,6 +107,22 @@ public class Boss : EnemyDamaged
         {
             Instantiate(scoreCollectible, bullet.transform.position, Quaternion.identity);
             Destroy(bullet);
+        }
+    }
+
+    IEnumerator BossPhaseChanging(int idx, int nbStocks)
+    {
+        // Use "PlayClipAtPoint" to avoid create an AudioSource and to avoid managing the Destroyed state
+        gameObject.GetComponent<Animator>().SetTrigger("Touch");
+        yield return new WaitForSecondsRealtime(0.5f);
+        AudioSource.PlayClipAtPoint(phaseClip, gameObject.transform.position, 0.5f);
+        SetMaxHealth(phaseDescriptors[idx].maxHealth);
+        spriteRenderer.sprite = phaseDescriptors[idx].sprite;
+        bossLifeBar.SetFillAmount(1);
+        bossLifeBar.SetLifeBarIndex(nbStocks);
+        foreach (var player in players)
+        {
+            player.BroadcastMessage("MakeActive", true);
         }
     }
 }

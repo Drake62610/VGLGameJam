@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public int playerScore;
-    private int level = 1;
     public string gameState;
     private GameObject continueEvent;
     private GameObject levelLoader;
@@ -31,19 +30,30 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
-        levelLoader =  GameObject.FindGameObjectsWithTag("load")[0];
-        continueEvent.SetActive(false);
-        gameState = "initGame";
+        InitLevel();
     }
 
     private void Update() {
         if(loadLevel == true) {
             {
+                levelLoader =  GameObject.FindGameObjectsWithTag("load")[0];
+                continueEvent =  GameObject.FindGameObjectsWithTag("continue")[0];
+                continueEvent.SetActive(false);
                 levelLoader.BroadcastMessage("PrepareToStart");
                 loadLevel = false;
             }
         }
+    }
+
+    public void InitLevel()
+    {
+        loadLevel = true;
+        gameState = "initGame";
+    }
+
+    public void ChangeLevel()
+    {
+        levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void TriggerContinue()

@@ -3327,6 +3327,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1598817210}
     - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
+      propertyPath: levelDescriptor
+      value: 
+      objectReference: {fileID: 51818045}
+    - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
       propertyPath: level01Descriptor
       value: 
       objectReference: {fileID: 51818045}

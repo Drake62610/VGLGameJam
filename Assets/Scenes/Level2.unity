@@ -357,7 +357,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &204961297
@@ -913,7 +913,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &515675574
@@ -1573,7 +1573,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1205263267
@@ -1704,7 +1704,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1246342593
@@ -2876,6 +2876,10 @@ PrefabInstance:
       propertyPath: CanvasOverlay
       value: 
       objectReference: {fileID: 1598817210}
+    - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
+      propertyPath: levelDescriptor
+      value: 
+      objectReference: {fileID: 51818045}
     - target: {fileID: 88607616116512608, guid: e119e76ef6f536b479f794952a4b8eae, type: 3}
       propertyPath: level01Descriptor
       value: 
