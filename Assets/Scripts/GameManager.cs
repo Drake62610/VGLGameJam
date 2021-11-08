@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private GameObject continueEvent;
     private GameObject levelLoader;
     private bool loadLevel = true;
+    private int level = 1;
 
 
     private void Awake()
@@ -53,7 +54,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel()
     {
-        levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
+        level += 1;
+        if (level == 2)
+            levelLoader.BroadcastMessage("ChangeLevel", SceneManager.GetActiveScene().buildIndex + 1);
+        else
+            GameOver();
     }
 
     public void TriggerContinue()
