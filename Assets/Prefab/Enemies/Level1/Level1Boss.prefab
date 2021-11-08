@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626069309007864331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0.08, y: -1.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3783997157464342690}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5104963604964273877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -0.15, z: 0}
+  m_LocalPosition: {x: -3, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3783997157464342690}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7174204029915012290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -0.15, z: 0}
+  m_LocalPosition: {x: 3, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3783997157464342690}
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 8977053816036207941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 13, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123737487516236846}
   - {fileID: 8074087212498921454}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa772af4e80d7244cac08d234e09ada1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cbb866cb69f8754888b28b2b3080b2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -193,18 +193,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0034204572, y: 0.0444659}
+  m_Offset: {x: 0, y: 0.17652863}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.22, y: 1.22}
+    oldSize: {x: 15.86, y: 6.1}
     newSize: {x: 1.22, y: 1.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.69894946, y: 0.70122993}
+  m_Size: {x: 9.290004, y: 3.542314}
   m_EdgeRadius: 0
 --- !u!50 &-6688800394400555214
 Rigidbody2D:
@@ -264,9 +264,9 @@ MonoBehaviour:
   health: 2500
   scoreCollectible: {fileID: 7563638756546119839, guid: 61978f9b2e773c640bfb8d93b1f8ce2f, type: 3}
   phaseDescriptors:
-  - sprite: {fileID: 21300000, guid: 00780df3899b4d14a93703aedfe41576, type: 3}
+  - sprite: {fileID: 21300000, guid: ca1caccf9aa54bf49bde7f3cdc8d90b1, type: 3}
     maxHealth: 2500
-  - sprite: {fileID: 21300000, guid: 104b09ae192669b4ca8699740b8c9919, type: 3}
+  - sprite: {fileID: 21300000, guid: 93f3b128859858f498dbc53f15b12196, type: 3}
     maxHealth: 2500
   nbStocks: 3
   phaseClip: {fileID: 8300000, guid: 90f7b86911aadaa4fb6787df3b5c06de, type: 3}

@@ -797,9 +797,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Thank you for playing !
-
-    Developped by Drake, Sugiuro and Yarimoto'
+  m_Text: "Merci d'avoir jou\xE9 !\nD\xE9velopp\xE9 par Drake, Sugiuro et Yarimoto\n#VGLgamejam
+    2021"
 --- !u!222 &1441085872
 CanvasRenderer:
   m_ObjectHideFlags: 0
