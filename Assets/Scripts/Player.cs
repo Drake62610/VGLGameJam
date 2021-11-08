@@ -75,6 +75,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(Input.GetAxis("Horizontal"));
+        Debug.Log(Input.GetAxis("Vertical"));
         Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * activeModifier * Time.deltaTime;
         rb2D.MovePosition(rb2D.position + velocity);
     }
